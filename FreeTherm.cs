@@ -23,23 +23,84 @@
 
 using System;
 using Gtk;
+using Gdk;
 using Glade;
-public class FreeTherm
-{
-        public static void Main (string[] args)
-        {
-                new FreeTherm (args);
-        }
- 
-        public FreeTherm (string[] args) 
-        {
-                Application.Init();
- 
-                Glade.XML gxml = new Glade.XML (null, "freetherm.glade", "MainWindow", null);
 
-                gxml.Autoconnect (this);
+public class FreeTherm {
+	/* Include all widgets here : */
 
-                Application.Run();
-        }
+	[Glade.Widget] Gtk.Window MainWindow;
+	[Glade.Widget] Gtk.AboutDialog AboutFreeThermDialog;
+
+	[Glade.Widget] Gtk.ImageMenuItem SaveMenuItem;
+	[Glade.Widget] Gtk.ImageMenuItem AboutMenuItem;
+	[Glade.Widget] Gtk.ImageMenuItem QuitMenuItem;
+	
+	[Glade.Widget] Gtk.Entry LowDegrees;
+	[Glade.Widget] Gtk.Entry LowOhms;
+
+	/* Fred Cooke 18 June 2008 */
+	public static void Main (string[] args)
+	{
+		new FreeTherm (args);
+	}
+
+	/* Fred Cooke 18 June 2008 */
+	public FreeTherm (string[] args) {
+		try {
+			Application.Init();
+			
+			Glade.XML MainXML =  new Glade.XML(null, "freetherm.glade", "MainWindow", null);
+			MainXML.Autoconnect (this);
+			
+			/* Setup handlers here : */
+			SaveMenuItem.Activated += SaveFile;	// Generate file output when user chooses "save".
+			AboutMenuItem.Activated += About;	// Open about dialog when user chooses "about".
+			QuitMenuItem.Activated += Quit;		// Exit when user chooses "quit".
+			MainWindow.Hidden += Quit;			// Exit when the main window is closed.
+
+			Application.Run();
+		} catch(Exception e) {
+			Console.WriteLine("The application failed to start : ", e);
+		}
+	}
+
+	/* Put event handlers here : */
+
+	public void SaveFileAs(object o, EventArgs args){}
+	public void Cut(object o, EventArgs args){}
+	public void Copy(object o, EventArgs args){}
+	public void Paste(object o, EventArgs args){}
+	public void Delete(object o, EventArgs args){}
+
+	public void SaveFile(object o, EventArgs args)
+	{
+		Console.WriteLine("Low Ohms = " + LowOhms.Text + " and Low Temp = " + LowDegrees.Text);
+	}
+
+	/* Fred Cooke 18 June 2008 */
+	public void Quit(object o, EventArgs args)
+	{
+		Environment.Exit(0); // Shut the program down without preserving any state.
+	}
+
+	/* Fred Cooke 18 June 2008 */
+	public void About(object o, EventArgs args)	{
+		try {
+			/* Load the window from the embedded glade file. */
+			Glade.XML AboutXML = new Glade.XML(null, "freetherm.glade", "AboutFreeThermDialog", null);
+			AboutXML.Autoconnect(this);
+		
+			if(AboutFreeThermDialog == null) {
+				Console.WriteLine("Why is AboutFreeThermDialog null?");
+			} else {
+				AboutFreeThermDialog.Logo = new Gdk.Pixbuf(null, "diy.php.png");	// Load the embedded resource into the dialog.
+				AboutFreeThermDialog.TransientFor = MainWindow;
+				AboutFreeThermDialog.Run();
+				AboutFreeThermDialog.Destroy();
+			}
+		} catch(Exception e) {
+			Console.WriteLine("Exception :", e);
+		}
+	}
 }
-

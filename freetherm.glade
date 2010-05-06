@@ -1628,11 +1628,10 @@ etc</property>
     <property name="title" translatable="yes">About FreeTherm</property>
     <property name="resizable">False</property>
     <property name="window_position">GTK_WIN_POS_CENTER_ALWAYS</property>
-    <property name="icon">diy.php.png</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
     <property name="program_name">FreeTherm</property>
-    <property name="version">0.1</property>
+    <property name="version">0.2</property>
     <property name="copyright" translatable="yes">This program is released under GPL V3 please see
 www.diyefi.org for the source code if it has not been included.
 The license terms are available from www.gnu.org.
@@ -1645,9 +1644,8 @@ Please visit www.diyefi.org for more information.
 Thanks for using FreeTherm</property>
     <property name="website">www.diyefi.org</property>
     <property name="website_label" translatable="yes">DIYEFI.org</property>
-    <property name="license" translatable="yes">GNU GPL V3</property>
+    <property name="license" translatable="yes">GNU GPL V3 see www.gnu.org for details.</property>
     <property name="authors">Fred and Shameem</property>
-    <property name="logo">diy.php.png</property>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="AboutBox">
         <property name="visible">True</property>
