@@ -1636,7 +1636,7 @@
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
     <property name="program_name">FreeTherm</property>
-    <property name="version">0.4</property>
+    <property name="version">0.5</property>
     <property name="copyright" translatable="yes">This program is released under GPL V3 please see
 www.diyefi.org for the source code if it has not been included.
 The license terms are available from www.gnu.org.

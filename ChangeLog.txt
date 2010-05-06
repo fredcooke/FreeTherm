@@ -61,4 +61,8 @@ Added Floor to match ceiling
 Added ability to format element as X per line
 Cleaned up after writer
 
+0.5 :
+Changed compile env library versions to 2.8.3 from 2.12.1
+Changed name of glade file to .xml
+Changed makefile to be slightly more tidy and target winexe
 
