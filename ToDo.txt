@@ -1,0 +1,12 @@
+TODO :
+
+Initialise and use remaining fields and buttons
+Format number output according to buttons
+Generate array type according to buttons
+Find out how to make it run on Windows (even if it means ditching Glade file!)
+Wrap file handling code in try, catch, finally to make it safe
+One more tab for program config?
+Give debug option an option in there or somewhere
+Beautify the GUI? (Rob?)
+Make cut, copy, paste, delete work with key commands and menu
+

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--	freetherm.glade
+<!--	FreeTherm.glade
 
-	Copyright 2008 Fred Cooke
+	Copyright 2008 Fred Cooke, Shameem Hameed
 
 	This file is part of the FreeEMS project.
 
@@ -25,9 +25,9 @@
 <glade-interface>
   <widget class="GtkWindow" id="MainWindow">
     <property name="visible">True</property>
-    <property name="title" translatable="yes">FreeTherm 0.1</property>
+    <property name="title" translatable="yes">FreeTherm - DIYEFI.org</property>
     <property name="resizable">False</property>
-    <signal name="delete_event" handler="on_MainWindow_delete_event"/>
+    <signal name="delete_event" handler="OnMainWindowDeleteEvent"/>
     <child>
       <widget class="GtkVBox" id="MasterBox">
         <property name="visible">True</property>
@@ -48,7 +48,7 @@
                         <property name="label" translatable="yes">gtk-save</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_SaveMenuItem_activate"/>
+                        <signal name="activate" handler="OnSaveMenuItemActivated"/>
                       </widget>
                     </child>
                     <child>
@@ -62,7 +62,7 @@
                         <property name="label" translatable="yes">gtk-quit</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_QuitMenuItem_activate"/>
+                        <signal name="activate" handler="OnQuitMenuItemActivated"/>
                       </widget>
                     </child>
                   </widget>
@@ -127,7 +127,7 @@
                         <property name="label" translatable="yes">gtk-about</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
-                        <signal name="activate" handler="on_AboutMenuItem_activate"/>
+                        <signal name="activate" handler="OnAboutMenuItemActivated"/>
                       </widget>
                     </child>
                   </widget>
@@ -182,8 +182,7 @@
                               <widget class="GtkEntry" id="LowDegrees">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">0</property>
-                                <signal name="changed" handler="on_LowDegrees_changed"/>
+                                <signal name="changed" handler="OnLowDegreesChanged"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -207,8 +206,7 @@
                               <widget class="GtkEntry" id="LowOhms">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">10000</property>
-                                <signal name="changed" handler="on_LowOhms_changed"/>
+                                <signal name="changed" handler="OnLowOhmsChanged"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -262,7 +260,7 @@
                               <widget class="GtkEntry" id="MidDegrees">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">20</property>
+                                <signal name="changed" handler="OnMidDegreesChanged"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -286,8 +284,7 @@
                               <widget class="GtkEntry" id="MidOhms">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">2000</property>
-                                <signal name="changed" handler="on_MidOhms_changed"/>
+                                <signal name="changed" handler="OnMidOhmsChanged"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -344,8 +341,7 @@
                               <widget class="GtkEntry" id="HighDegrees">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">80</property>
-                                <signal name="changed" handler="on_HighDegrees_changed"/>
+                                <signal name="changed" handler="OnHighDegreesChanged"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -369,8 +365,7 @@
                               <widget class="GtkEntry" id="HighOhms">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">300</property>
-                                <signal name="changed" handler="on_HighOhms_changed"/>
+                                <signal name="changed" handler="OnHighOhmsChanged"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -413,8 +408,7 @@
                           <widget class="GtkEntry" id="BiasOhms">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="text" translatable="yes">2200</property>
-                            <signal name="changed" handler="on_BiasOhms_changed"/>
+                            <signal name="changed" handler="OnBiasOhmsChanged"/>
                           </widget>
                           <packing>
                             <property name="position">1</property>
@@ -449,9 +443,8 @@
                                 <property name="can_focus">True</property>
                                 <property name="label" translatable="yes">Celcius</property>
                                 <property name="response_id">0</property>
-                                <property name="active">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_CelciusIn_toggled"/>
+                                <signal name="toggled" handler="OnCelciusInToggled"/>
                               </widget>
                             </child>
                             <child>
@@ -462,7 +455,7 @@
                                 <property name="response_id">0</property>
                                 <property name="draw_indicator">True</property>
                                 <property name="group">CelciusIn</property>
-                                <signal name="toggled" handler="on_KelvinIn_toggled"/>
+                                <signal name="toggled" handler="OnKelvinInToggled"/>
                               </widget>
                               <packing>
                                 <property name="position">1</property>
@@ -476,7 +469,7 @@
                                 <property name="response_id">0</property>
                                 <property name="draw_indicator">True</property>
                                 <property name="group">CelciusIn</property>
-                                <signal name="toggled" handler="on_FahrenheitIn_toggled"/>
+                                <signal name="toggled" handler="OnFahrenheitInToggled"/>
                               </widget>
                               <packing>
                                 <property name="position">2</property>
@@ -549,7 +542,6 @@
                                         <property name="can_focus">True</property>
                                         <property name="label" translatable="yes">10 bit ADC</property>
                                         <property name="response_id">0</property>
-                                        <property name="active">True</property>
                                         <property name="draw_indicator">True</property>
                                       </widget>
                                     </child>
@@ -609,7 +601,6 @@
                                     <property name="can_focus">True</property>
                                     <property name="label" translatable="yes">round</property>
                                     <property name="response_id">0</property>
-                                    <property name="active">True</property>
                                     <property name="draw_indicator">True</property>
                                   </widget>
                                 </child>
@@ -660,8 +651,8 @@
                                     <property name="can_focus">True</property>
                                     <property name="label" translatable="yes">Kelvin</property>
                                     <property name="response_id">0</property>
-                                    <property name="active">True</property>
                                     <property name="draw_indicator">True</property>
+                                    <signal name="toggled" handler="OnKelvinOutToggled"/>
                                   </widget>
                                 </child>
                                 <child>
@@ -672,6 +663,7 @@
                                     <property name="response_id">0</property>
                                     <property name="draw_indicator">True</property>
                                     <property name="group">KelvinOut</property>
+                                    <signal name="toggled" handler="OnCelciusOutToggled"/>
                                   </widget>
                                   <packing>
                                     <property name="position">1</property>
@@ -685,6 +677,7 @@
                                     <property name="response_id">0</property>
                                     <property name="draw_indicator">True</property>
                                     <property name="group">KelvinOut</property>
+                                    <signal name="toggled" handler="OnFahrenheitOutToggled"/>
                                   </widget>
                                   <packing>
                                     <property name="position">2</property>
@@ -842,7 +835,6 @@
                             <property name="can_focus">True</property>
                             <property name="label" translatable="yes">unsigned short</property>
                             <property name="response_id">0</property>
-                            <property name="active">True</property>
                             <property name="draw_indicator">True</property>
                           </widget>
                         </child>
@@ -966,10 +958,9 @@
                           </widget>
                         </child>
                         <child>
-                          <widget class="GtkEntry" id="ArrayName">
+                          <widget class="GtkEntry" id="ArrayNameEntry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="editable">False</property>
                             <property name="text" translatable="yes">IATTransferTable</property>
                           </widget>
                           <packing>
@@ -1015,10 +1006,7 @@
                               <widget class="GtkTextView" id="Keywords">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="text" translatable="yes">const
-static
-PPAGE_EC
-etc</property>
+                                <property name="text" translatable="yes">const</property>
                               </widget>
                             </child>
                           </widget>
@@ -1069,7 +1057,6 @@ etc</property>
                             <property name="can_focus">True</property>
                             <property name="label" translatable="yes">unsigned short</property>
                             <property name="response_id">0</property>
-                            <property name="active">True</property>
                             <property name="draw_indicator">True</property>
                           </widget>
                         </child>
@@ -1206,7 +1193,7 @@ etc</property>
                           </widget>
                         </child>
                         <child>
-                          <widget class="GtkEntry" id="Filename">
+                          <widget class="GtkEntry" id="FileNameEntry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="text" translatable="yes">IATTransfer.c</property>
@@ -1269,10 +1256,11 @@ etc</property>
                           </widget>
                         </child>
                         <child>
-                          <widget class="GtkEntry" id="ElementsPerLine">
+                          <widget class="GtkEntry" id="ElementsPerLineEntry">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="text" translatable="yes">16</property>
+                            <signal name="changed" handler="OnElementsPerLineChanged"/>
                           </widget>
                           <packing>
                             <property name="position">1</property>
@@ -1324,7 +1312,6 @@ etc</property>
                                 <property name="can_focus">True</property>
                                 <property name="label" translatable="yes">Linux/Unix (LF/NL only)</property>
                                 <property name="response_id">0</property>
-                                <property name="active">True</property>
                                 <property name="draw_indicator">True</property>
                               </widget>
                             </child>
@@ -1397,7 +1384,6 @@ etc</property>
                                 <property name="can_focus">True</property>
                                 <property name="label" translatable="yes">Tabs</property>
                                 <property name="response_id">0</property>
-                                <property name="active">True</property>
                                 <property name="draw_indicator">True</property>
                               </widget>
                             </child>
@@ -1457,7 +1443,6 @@ etc</property>
                             <property name="can_focus">True</property>
                             <property name="label" translatable="yes">Pad with spaces?</property>
                             <property name="response_id">0</property>
-                            <property name="active">True</property>
                             <property name="draw_indicator">True</property>
                           </widget>
                           <packing>
@@ -1519,16 +1504,30 @@ etc</property>
                       <widget class="GtkTextView" id="CommentView">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="text" translatable="yes">/* Place your comments here! */
+                        <property name="text" translatable="yes">/*	IATTransferTable.c
 
-// Please ensure you include C style comment syntax
+	Copyright 2008 Fred Cooke
 
-/* Either form is acceptable
- *
- * Multi Line or
- */
+	This file is part of the FreeEMS project.
 
-// Single line :-)</property>
+	FreeEMS software is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	FreeEMS software is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with any FreeEMS software.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+
+	We ask that if you make any changes to this file you send them upstream to us at admin@diyefi.org
+
+	Thank you for choosing FreeEMS to run your engine! */
+
+</property>
                       </widget>
                     </child>
                   </widget>
@@ -1604,7 +1603,7 @@ etc</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="justification">GTK_JUSTIFY_CENTER</property>
-            <property name="text" translatable="yes">Something is broken, ask an author to fix it.</property>
+            <property name="text" translatable="yes">:-( Something is broken, ask an author to fix it :-(</property>
           </widget>
           <packing>
             <property name="position">1</property>
@@ -1617,7 +1616,7 @@ etc</property>
             <property name="label" translatable="yes">OK</property>
             <property name="use_underline">True</property>
             <property name="response_id">0</property>
-            <signal name="clicked" handler="on_ButOK_clicked"/>
+            <signal name="clicked" handler="OnButOK_clicked"/>
           </widget>
           <packing>
             <property name="expand">False</property>
@@ -1637,12 +1636,12 @@ etc</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
     <property name="program_name">FreeTherm</property>
-    <property name="version">0.3</property>
+    <property name="version">0.4</property>
     <property name="copyright" translatable="yes">This program is released under GPL V3 please see
 www.diyefi.org for the source code if it has not been included.
 The license terms are available from www.gnu.org.
 </property>
-    <property name="comments" translatable="yes">FreeTherm was a Joint effort between Fred
+    <property name="comments" translatable="yes">FreeTherm is a Joint effort between Fred
 and Shameem on the www.diyefi.org forum.
 
 Please visit www.diyefi.org for more information.

@@ -1,0 +1,64 @@
+0.1 :
+Initial version
+Gui mostly complete
+Tiny code to make it run
+
+0.2 :
+Fixed the Makefile to use version 2.0 libs
+Fixed Makefile to include graphics and glade file in the exe.
+Figured out how to load AboutDialog window and graphic.
+Added try catch blocks
+Added event handling for some menu items :
+Quit works.
+Closing the window quits.
+Save outputs the low temp pair in HR format.
+About dialog comes up with it's graphic when about is chosen and the buttons
+within function correctly.
+Other things?
+
+0.3 :
+Shameem :
+Added slots/signals
+Added math for generating SH coefficients
+Added file writing code
+Added deprecated file dialog
+Added some state handling code
+Deleted my Makefile
+Deleted my safety code
+Deleted my about dialog or at least stopped it working :-)
+Added number handling code (only works for ints not floats)
+
+Fred :
+Fixed math for resistor calculation section
+Fixed file writing code (needed clear and flush etc)
+Changed file dialog to up to date version
+Renamed many variables
+Re added my Makefile and changed it to suit new filenames
+Re added my dialog code
+Re added my safety code
+Added slight structure to the code
+Changed number handling code (wasn't working on one box, but was on others)
+
+0.4 :
+Improved signal naming
+Fixed mid temp signal
+Added int parsing method/function
+Added button handlers for output temp
+Added temperature conversions
+Added comment above unused widgets
+Renamed filename and array widgets
+Added Scale output widgets and handlers
+Changed all spaces to tabs
+Added debug flag and some code
+Initialised internal scales by setting radiobuttons
+Shifted all leading braces to behind declaration with a space
+Commented most things that needed it
+Added init methods
+Renamed numberverify to floatingpointverify and added integerverify
+Reordered methods slightly to conform with "region" tags
+Removed return calls at the end of void functions
+Added Floor to match ceiling
+Added ability to format element as X per line
+Cleaned up after writer
+
+
