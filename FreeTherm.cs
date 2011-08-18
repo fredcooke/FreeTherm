@@ -86,7 +86,7 @@ namespace FreeTherm {
 		#region Globals
 		
 		// Version for output files and display in app
-		const string VERSION = "0.6-SNAPSHOT";
+		const string VERSION = "0.6";
 
 		// Constants.
 		const double KelvinOffset = 273.15;
