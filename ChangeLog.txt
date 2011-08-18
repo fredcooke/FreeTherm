@@ -66,3 +66,8 @@ Changed compile env library versions to 2.8.3 from 2.12.1
 Changed name of glade file to .xml
 Changed makefile to be slightly more tidy and target winexe
 
+0.6 :
+Added output of all parameters to C file
+Swapped temp scales to enum
+Made app version appear in title and output files
+
