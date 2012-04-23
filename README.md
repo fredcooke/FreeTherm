@@ -14,7 +14,7 @@ application.
 
 For development, which is done on Debian, you just add -dev to each package.
 
-	apt-get install libmono-corlib2.0-cil-dev libgtk2.0-cil-dev libglade2.0-cil-dev mono-mcs
+	apt-get install libmono-corlib2.0-cil-dev libgtk2.0-cil-dev libglade2.0-cil-dev mono-dmcs
 
 These instructions may be incomplete, however it's a good start.
 
