@@ -313,17 +313,23 @@ namespace FreeTherm {
 		#region Text Entry handlers
 
 		public void OnLowDegreesChanged(object o, EventArgs args) {
-			lowTemp = floatingPointVerify(LowDegrees, lowTemp);
+			if(LowDegrees.Text != "-"){
+				lowTemp = floatingPointVerify(LowDegrees, lowTemp);
+			}
 			dWriteLine("lowTemp to : " + lowTemp.ToString());
 		}
 
 		public void OnMidDegreesChanged(object o, EventArgs args) {
-			midTemp = floatingPointVerify(MidDegrees, midTemp);
+			if(MidDegrees.Text != "-"){
+				midTemp = floatingPointVerify(MidDegrees, midTemp);
+			}
 			dWriteLine("midTemp to : " + midTemp.ToString());
 		}
 
 		public void OnHighDegreesChanged(object o, EventArgs args) {
-			highTemp = floatingPointVerify(HighDegrees, highTemp);
+			if(HighDegrees.Text != "-"){
+				highTemp = floatingPointVerify(HighDegrees, highTemp);
+			}
 			dWriteLine("highTemp to : " + highTemp.ToString());
 		}
 
